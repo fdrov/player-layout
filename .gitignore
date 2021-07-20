@@ -222,3 +222,7 @@ fabric.properties
 screenshots
 fontawesome-free-5.15.3-web
 how-to-html.html
+example_max.html
+example_min.html
+.editorconfig
+server.py
