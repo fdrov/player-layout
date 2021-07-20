@@ -2,17 +2,65 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css">
+  <style type="text/css">
+    #player {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      height: 600px;
+      box-shadow: 0 0 10px black;
+    }
+
+    .js-video-container {
+      flex-grow: 1
+    }
+
+    button {
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-size: 1em;
+      margin: 5px 10px;
+      padding: 5px;
+      /*border: solid black;*/
+    }
+
+    .buttons-panel {
+      display: flex;
+      background-color: black;
+      line-height: 50px;
+    }
+
+    .buttons-panel > .js-fullscreen-button {
+      margin-left: auto;
+    }
+  </style>
   <title>Player</title>
 </head>
 <body>
-  <div id="player" style="width: 800px; height: 600px;">
-    <div class="js-video-container" style="width: 100%; height: 100%"></div>
+<div id="player">
+  <div class="js-video-container"></div>
+  <div class="buttons-panel">
+    <button class="js-play-button"><span class="fa fa-play"></span></button>
+    <button class="js-pause-button" hidden><span class="fa fa-pause"></span>
+    </button>
+    <button class="js-mute-button"><span class="fa fa-volume-off"></span>
+    </button>
+    <button class="js-volume-button" hidden><span
+      class="fa fa-volume-up"></span></button>
+    <div></div>
+    <button class="js-fullscreen-button"><span class="fa fa-expand"></span>
+    </button>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
-  <script type="text/javascript">
-    createPlayer({elementId: 'player'});
-  </script>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script
+  src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+<script src="player.js"></script>
+<script type="text/javascript">
+  createPlayer({elementId: 'player'});
+</script>
 </body>
 </html>
