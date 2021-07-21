@@ -2,9 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
-    .player-window {
+    .player {
       display: flex;
       flex-direction: column;
       max-width: 800px;
@@ -12,11 +13,11 @@
       box-shadow: 0 0 10px black;
     }
 
-    .video-container {
+    .screen {
       flex-grow: 1
     }
 
-    button {
+    .player .buttons-panel .player-button {
       cursor: pointer;
       color: white;
       background-color: transparent;
@@ -24,35 +25,44 @@
       font-size: 1em;
       margin: 5px 10px;
       padding: 5px;
-      /*border: solid black;*/
     }
 
-    .buttons-panel {
+    .player .buttons-panel {
       display: flex;
       background-color: black;
       line-height: 50px;
     }
 
-    .buttons-panel > .fullscreen-button {
-      margin-left: auto;
+    .player .buttons-panel .viewing-panel {
+      flex-grow: 1;
     }
   </style>
   <title>Player</title>
 </head>
 <body>
-<div class="player-window" id="player">
-  <div class="video-container js-video-container"></div>
+<div class="player" id="player">
+  <div class="screen js-video-container"></div>
   <div class="buttons-panel">
-    <button class="js-play-button"><span class="fa fa-play"></span></button>
-    <button class="js-pause-button" hidden><span class="fa fa-pause"></span>
-    </button>
-    <button class="js-mute-button"><span class="fa fa-volume-up"></span>
-    </button>
-    <button class="js-volume-button" hidden><span
-      class="fa fa-volume-off"></span></button>
-    <div></div>
-    <button class="fullscreen-button js-fullscreen-button"><span class="fa fa-expand"></span>
-    </button>
+    <div class="left-buttons">
+      <button class="player-button play js-play-button"><span
+        class="fa fa-play"></span></button>
+      <button class="player-button pause js-pause-button" hidden><span
+        class="fa fa-pause"></span>
+      </button>
+      <button class="player-button mute js-mute-button"><span
+        class="fa fa-volume-up"></span>
+      </button>
+      <button class="player-button volume js-volume-button" hidden><span
+        class="fa fa-volume-off"></span></button>
+    </div>
+    <div class="viewing-panel">
+<!--      заготовка для прогресс-бара-->
+    </div>
+    <div class="right-buttons">
+      <button class="player-button fullscreen js-fullscreen-button"><span
+        class="fa fa-expand"></span>
+      </button>
+    </div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
